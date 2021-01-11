@@ -3,16 +3,28 @@
     get_header();
 ?>
 <section class="banner">
-    <div class="owl-banner owl-carousel owl-theme">
-        <div class="item">
-            <div class="banner" style="background-image: url('<?php bloginfo('template_url'); ?>/assets/images/banner_01.png');">
-                <h1>
-                    Tecnologia <br>
-                    ao seu alcance.
-                </h1>
+    <?php 
+        if(have_rows('banner')) {
+    ?>
+            <div class="owl-banner owl-carousel owl-theme">
+    <?php 
+                while(have_rows('banner')) {
+                    the_row();
+                    $image = get_sub_field('image');
+                    $title = get_sub_field('title');
+    ?>
+                    <div class="item">
+                        <div class="banner" style="background-image: url('<?=$image?>');">
+                            <?=$title?>
+                        </div>
+                    </div>
+    <?php 
+                }
+    ?>
             </div>
-        </div>
-    </div>
+    <?php
+        }
+    ?>
 </section>
 <section id="about" class="about">
     <div class="container">
@@ -68,120 +80,151 @@
 <section id="cases" class="cases">
     <div class="container">
         <h1 class="section-title">Cases de Sucesso</h1>
-        <div class="owl-cases owl-carousel owl-theme">
-            <div class="item">
-                <div class="service">
-                    <div class="service__thumb">
-                        <img class="img-responsive" src="<?php bloginfo('template_url'); ?>/assets/images/case_01.png">
-                    </div>
-                    <div class="service__content">
-                        <h2 class="service__title">Lorem ipsum dolor sit amet</h2>
-                        <div class="service__description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel neque velit. Nam sagittis finibus ultrices. Phasellus cursus at velit vitae pellentesque. Phasellus auctor neque quam, in rhoncus risus ultricies eget. Maecenas tempor, magna a aliquam fringilla, sapien diam cursus sapien.
+        <?php 
+            if(have_rows('cases')) {
+        ?>
+                <div class="owl-cases owl-carousel owl-theme">
+        <?php 
+                    while(have_rows('cases')) {
+                        the_row();
+                        $thumb = get_sub_field('thumb');
+                        $title = get_sub_field('title');
+                        $description = get_sub_field('description');
+        ?>
+                        <div class="item">
+                            <div class="service">
+                                <div class="service__thumb">
+                                    <img class="img-responsive" src="<?=$thumb?>">
+                                </div>
+                                <div class="service__content">
+                                    <h2 class="service__title"><?=$title?></h2>
+                                    <div class="service__description">
+                                        <?=$description?>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+        <?php 
+                    }
+        ?>
                 </div>
-            </div>
+        <?php 
+            }
+        ?>
         </div>
     </div>
 </section>
 <section id="courses" class="courses">
     <div class="container">
         <h1 class="section-title">Nossos Cursos</h1>
-        <div class="row">
-            <?php 
-                if(have_rows('courses')) {
-            ?>
-                    <div class="owl-courses owl-carousel owl-theme">
-            <?php 
-                    while(have_rows('courses')) {
-                        the_row();
-                        $thumb = get_sub_field('thumb');
-                        $title = get_sub_field('title');
-                        $description = get_sub_field('description');
-                        $link = get_sub_field('link');
-            ?>
-                        <div class="item">
-                            <div class="box course">
-                                <div class="box__thumb">
-                                    <img alt="<?=$title?>" class="img-responsive" src="<?=$thumb?>">
-                                </div>
-                                <div class="box__content">
-                                    <h3 class="box__title">
-                                        <?=$title?>
-                                    </h3>
-                                    <div class="box__description">
-                                        <?=$description?>
-                                    </div>
-                                    <a class="btn-custom" href="<?=$link?>">Quero este curso</a>
-                                </div>
+        <?php 
+            if(have_rows('courses')) {
+        ?>
+                <div class="owl-courses owl-carousel owl-theme">
+        <?php 
+                while(have_rows('courses')) {
+                    the_row();
+                    $thumb = get_sub_field('thumb');
+                    $title = get_sub_field('title');
+                    $description = get_sub_field('description');
+                    $link = get_sub_field('link');
+        ?>
+                    <div class="item">
+                        <div class="box course">
+                            <div class="box__thumb">
+                                <img alt="<?=$title?>" class="img-responsive" src="<?=$thumb?>">
                             </div>
-                        </div>                        
-            <?php 
-                    }
-            ?>
-                    </div>
-            <?php 
+                            <div class="box__content">
+                                <h3 class="box__title">
+                                    <?=$title?>
+                                </h3>
+                                <div class="box__description">
+                                    <?=$description?>
+                                </div>
+                                <a class="btn-custom" href="<?=$link?>">Quero este curso</a>
+                            </div>
+                        </div>
+                    </div>                        
+        <?php 
                 }
-            ?>
-        </div>
+        ?>
+                </div>
+        <?php 
+            }
+        ?>
     </div>
 </section>
 <section id="testimonials" class="testimonials">
     <div class="container">
         <h1 class="section-title">Depoimentos de nossos clientes</h1>
-        <div class="testimonial">
-            <div class="testimonial__description">
-                <p>
-                    // Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-                </p>
-            </div>
-            <div class="testimonial-author">
-                <div class="testimonial-author__thumb">
-
+        <?php 
+            if(have_rows('testimonials')) {
+        ?>
+                <div class="owl-testimonials owl-carousel owl-theme">
+        <?php 
+                    while(have_rows('testimonials')) {
+                        the_row();
+                        $description = get_sub_field('description');
+                        $author_image = get_sub_field('author_image');
+                        $author_name = get_sub_field('author_name');
+                        $subtitle = get_sub_field('subtitle');
+        ?>
+                        <div class="item">
+                            <div class="testimonial">
+                                <h2 class="testimonial__description">
+                                    <?=$description?>
+                                </h2>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-author__thumb">
+                                        <img alt="<?=$author_name?>" class="img-responsive" src="<?=$author_image?>">
+                                    </div>
+                                    <div class="testimonial-author__content">
+                                        <div class="testimonial-author__name"><?=$author_name?></div>
+                                        <div class="testimonial-author__description"><?=$subtitle?></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        <?php 
+                    }
+        ?>
                 </div>
-                <div class="testimonial-author__content">
-                    <div class="testimonial-author__name">Fernando Costa</div>
-                    <div class="testimonial-author__description">Banco Bancoso</div>
-                </div>
-            </div>
-        </div>
+        <?php 
+            }
+        ?>
     </div>
 </section>
 <section id="partners" class="partners">
     <div class="container">
         <h1 class="section-title">Nossos Parceiros</h1>
-        <div class="row">
-            <?php 
-                if(have_rows('partners')) {
-            ?>
-                    <div class="owl-partners owl-carousel owl-theme">
-            <?php 
-                    while(have_rows('partners')) {
-                        the_row();
-                        $logo = get_sub_field('logo');
-                        $title = get_sub_field('title');
-                        $description = get_sub_field('description');
-            ?>
-                        <div class="item">
-                            <div class="box partner">
-                                <div class="box__content">
-                                    <div class="box__icon">
-                                        <img alt="<?=$title?>" class="img-responsive" src="<?=$logo?>">
-                                    </div>
-                                    <h4 class="box__title"><?=$title?></h4>
-                                    <div class="box__description">
-                                        <?=$description?>
-                                    </div>
+        <?php 
+            if(have_rows('partners')) {
+        ?>
+                <div class="owl-partners owl-carousel owl-theme">
+        <?php 
+                while(have_rows('partners')) {
+                    the_row();
+                    $logo = get_sub_field('logo');
+                    $title = get_sub_field('title');
+                    $description = get_sub_field('description');
+        ?>
+                    <div class="item">
+                        <div class="box partner">
+                            <div class="box__content">
+                                <div class="box__icon">
+                                    <img alt="<?=$title?>" class="img-responsive" src="<?=$logo?>">
+                                </div>
+                                <h4 class="box__title"><?=$title?></h4>
+                                <div class="box__description">
+                                    <?=$description?>
                                 </div>
                             </div>
                         </div>
-            <?php 
-                    }
+                    </div>
+        <?php 
                 }
-            ?>
-
-        </div>
+            }
+        ?>
     </div>
 </section>
 <section class="more-articles">
@@ -189,7 +232,7 @@
         <h1 class="section-title">Artigos</h1>
         <div class="row">
             <?php 
-                $args = array('limit' => 3);
+                $args = array('posts_per_page' => 3);
                 $query = new WP_Query($args);
 
                 if($query->have_posts()) {
@@ -246,6 +289,7 @@
             </div>
             <div class="col-sm-6">
                 <h1 class="section-title section-title--left">Entre em contato conosco</h1>
+                <?=do_shortcode('[wpforms id="73"]')?>
             </div>
         </div>
     </div>

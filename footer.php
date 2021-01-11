@@ -1,42 +1,49 @@
+<?php 
+    $description = get_field('footer_description', 'option');
+    $address = get_field('footer_address', 'option');
+    $phone = get_field('footer_phone', 'option');
+    $email = get_field('footer_email', 'option');
+    $instagram = get_field('footer_instagram', 'option');
+    $youtube = get_field('footer_youtube', 'option');
+    $facebook = get_field('footer_facebook', 'option');
+?>
         <footer>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-4 col-xs-12">
-                        <img alt="Logo" src="<?php bloginfo('template_url'); ?>/assets/images/logo.png">
+                    <div class="footer-left col-sm-4 col-xs-12">
+                        <a class="footer-brand" href="<?php bloginfo('url'); ?>">
+                            <img alt="Logo" src="<?php bloginfo('template_url'); ?>/assets/images/logo.png">
+                        </a>
                         <p>
-                            Consectetur adipiscing elit. Maecenas vitae dignissim quam. Etiam quam risus, auctor in facilisis eu, lobortis ac turpis.
+                            <?=$description?>
                         </p>
                     </div>
-                    <div class="col-sm-4 col-xs-12">
+                    <div class="footer-middle col-sm-4 col-xs-12">
                         <b>Endereço</b>
-                        <p>
-                            Rua Nome da Rua, nº 00 - Bairro, Cidade/UF
-                        </p>
+                        <p><?=$address?></p>
                         <br>
                         <b>Telefone</b>
-                        <p>
-                            (00) 0 0000-0000
-                        </p>
+                        <p><?=$phone?></p>
                         <br>
                         <b>E-mail</b>
-                        <p>emaildaempresa@email.com.br</p>
+                        <p><?=$email?></p>
                     </div>
-                    <div class="col-sm-4 col-xs-12 text-right">
+                    <div class="footer-right col-sm-4 col-xs-12">
                         <b>Fique por dentro das novidades</b>
                         <div class="footer-social-networks">
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="https://instagram.com/<?=$instagram?>">
                                         <i class="fa fa-instagram"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="https://youtube.com/channel/<?=$youtube?>">
                                         <i class="fa fa-youtube-play"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="https://facebook.com/<?=$facebook?>">
                                         <i class="fa fa-facebook"></i>
                                     </a>
                                 </li>

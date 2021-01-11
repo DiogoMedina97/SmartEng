@@ -2,16 +2,15 @@
     // Template name: Search
     get_header('search');
 
-    $limit = 12;
-    $paged = get_query_var('paged');
-    $paged = $paged <= 0 ? 1 : $paged;
+    $limit = intval(get_option('posts_per_page'));
+    $paged = get_query_var('paged') ? get_query_var('paged') : 1;
     $queried_object = get_queried_object();
     $s = get_search_query();
 
     $args = array(
-        'limit' => $limit,
+        'posts_per_page' => $limit,
         'paginate' => true,
-        'page' => $paged
+        'paged' => $paged
     );
 
     if($queried_object->term_id != null) {
@@ -27,6 +26,21 @@
     }
 
     $query = new WP_Query($args);
+    $total_pages = $query->max_num_pages;
+
+    if($total_pages > 1) {
+        $current_page = max(1, $paged);
+
+        $pagination = paginate_links(array(
+            'current' => $current_page,
+            'total' => $total_pages,
+            'end_size' => 1,
+            'mid_size' => 2,
+            'type' => 'list',
+            'prev_text'    => __('<i class="fa fa-caret-left"></i>'),
+            'next_text'    => __('<i class="fa fa-caret-right"></i>')
+        ));
+    }
 ?>
 <section class="articles">
     <div class="container">
@@ -92,6 +106,9 @@
         <?php 
                     }
         ?>
+                </div>
+                <div class="article-pagination">
+                    <?=$pagination?>
                 </div>
         <?php 
             } else {

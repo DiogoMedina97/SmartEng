@@ -1,4 +1,4 @@
-$(function() {
+(function($) {
 	function navbar_active() {
 		const scrollTop = $(window).scrollTop();
 
@@ -27,6 +27,14 @@ $(function() {
 			scrollTop: scrollTop
 		}, 500);
 		return false;
+    });
+    
+	$('button.navbar-toggle').click(function(){
+		if( !$('.navbar-collapse').hasClass('in') ) {
+			$('.navbar-header').addClass('active');
+		} else {
+			$('.navbar-header').removeClass('active');
+		}
 	});
 
     $('.owl-banner').owlCarousel({
@@ -81,9 +89,18 @@ $(function() {
                 items: 1
             },
             768: {
-                items: 3
+                items: 4
             }
         }
+    });
+
+    $('.owl-testimonials').owlCarousel({
+        loop: true,
+        margin: 15,
+        stagePadding: 0,
+        dots: false,
+        nav: false,
+        items: 1
     });
     
     $('.owl-cases').owlCarousel({
@@ -94,4 +111,4 @@ $(function() {
         nav: false,
         items: 1
     });
-});
+})(jQuery);
