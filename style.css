@@ -661,6 +661,79 @@ h4 {
 	color: #0F70B7;
 	display: block;
 }
+
+#respond {
+	margin-bottom: 50px;
+}
+
+#reply-title {
+	margin-bottom: 15px;
+}
+
+#commentform input,
+#commentform textarea {
+	width: 100%;
+	margin-bottom: 15px;
+	padding: 15px;
+	border: 1px solid #C4C4C4;
+    display: block;
+}
+
+#commentform .btn-custom {
+	margin: 0 0 0 auto !important;
+}
+
+#comments {
+	margin-bottom: 50px;
+}
+
+#comments ul {
+	margin: 0;
+	list-style: none;
+}
+
+#comments ul li {
+	margin-top: 30px;
+}
+
+#comments > ul {
+	padding-left: 0;
+}
+
+#comments > ul > li + li {
+	padding-top: 30px;
+	border-top: 1px solid #C4C4C4;
+}
+
+#comments .comment-author {
+	width: 50%;
+	float: left;
+}
+
+#comments .comment-meta {
+	width: 50%;
+	line-height: 32px;
+	text-align: right;
+	float: left;
+}
+
+#comments .comment-body:before,
+#comments .comment-body:after {
+	content: '';
+	clear: both;
+	display: table;
+}
+
+#comments .comment-body > p {
+    width: 100%;
+    margin: 15px 0;
+	float: left;
+}
+
+#comments .reply {
+	width: 100%;
+	float: left;
+}
 /* /SINGLE POST */
 
 /* ERROR 404 */
