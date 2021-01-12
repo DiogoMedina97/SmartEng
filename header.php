@@ -34,29 +34,14 @@
                         </a>
                     </div>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li>
-                                <a href="#about">Sobre</a>
-                            </li>
-                            <li>
-                                <a href="#services">Serviços</a>
-                            </li>
-                            <li>
-                                <a href="#cases">Cases</a>
-                            </li>
-                            <li>
-                                <a href="#courses">Cursos</a>
-                            </li>
-                            <li>
-                                <a href="#testimonials">Depoimentos</a>
-                            </li>
-                            <li>
-                                <a href="#partners">Parceiros</a>
-                            </li>
-                            <li>
-                                <a href="#contact">Contato</a>
-                            </li>
-                        </ul>
+                        <?php 
+                            wp_nav_menu(array(
+                                'menu' => 'menu_topo',
+                                'menu_id' => 'top_menu',
+                                'menu_class' => 'nav navbar-nav',
+                                'container' => 'ul'
+                            ));
+                        ?>
                     </div>
                 </div>
             </nav>

@@ -62,6 +62,7 @@
                                         <img alt="<?=$title?>" class="img-responsive" src="<?=$icon?>">
                                     </div>
                                     <h3 class="box__title"><?=$title?></h3>
+                                    <hr class="divider">
                                     <div class="box__description">
                                         <?=$description?>
                                     </div>
@@ -92,14 +93,15 @@
                         $description = get_sub_field('description');
         ?>
                         <div class="item">
-                            <div class="service">
-                                <div class="service__thumb">
+                            <div class="case">
+                                <div class="case__thumb">
                                     <img class="img-responsive" src="<?=$thumb?>">
                                 </div>
-                                <div class="service__content">
-                                    <h2 class="service__title"><?=$title?></h2>
-                                    <div class="service__description">
+                                <div class="case__content">
+                                    <h2 class="case__title"><?=$title?></h2>
+                                    <div class="case__description">
                                         <?=$description?>
+                                        <hr class="divider divider--secondary">
                                     </div>
                                 </div>
                             </div>
@@ -174,6 +176,7 @@
                                 <h2 class="testimonial__description">
                                     <?=$description?>
                                 </h2>
+                                <hr class="divider divider--secondary">
                                 <div class="testimonial-author">
                                     <div class="testimonial-author__thumb">
                                         <img alt="<?=$author_name?>" class="img-responsive" src="<?=$author_image?>">
