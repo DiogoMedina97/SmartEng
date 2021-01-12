@@ -10,6 +10,7 @@
                 $author_image = get_avatar_url(get_the_author_meta('ID'), array('size' => '260'));
                 $author_name = get_the_author_meta('display_name');
                 $author_description = get_the_author_meta('description');
+                $article_author = get_field('article_author');
     ?>
                 <article class="single-article">
                     <div class="single-article__thumb">
@@ -54,14 +55,13 @@
                                             }
                                         ?>
                                     </div>
-                                    <div class="col-sm-4 col-xs-12">
-                                        <?php 
-                                            $article_author = get_field('article_author');
-                                        ?>
-                                        <div class="article-infos__author">
-                                            <b>Autor:</b> <?=$article_author?>
+                                    <?php if($article_author) { ?>
+                                        <div class="col-sm-4 col-xs-12">
+                                            <div class="article-infos__author">
+                                                <b>Autor:</b> <?=$article_author?>
+                                            </div>
                                         </div>
-                                    </div>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
@@ -114,58 +114,62 @@
         }
     ?>
 </section>
-<section class="more-articles">
-    <div class="container">
-        <h1 class="section-title">Outros artigos</h1>
-        <div class="row">
-            <?php 
-                $args = array('posts_per_page' => 3, 'post__not_in' => array($post_id));
-                $query = new WP_Query($args);
+<?php 
+    $args = array('posts_per_page' => 3, 'post__not_in' => array($post_id));
+    $query = new WP_Query($args);
 
-                if($query->have_posts()) {
-                    while($query->have_posts()) {
-                        $query->the_post();
-            ?>
-                        <div class="col-sm-4 col-xs-12">
-                            <article class="article">
-                                <a href="<?php the_permalink(); ?>">
-                                    <div class="article__thumb">
-                                        <img alt="<?php the_title(); ?>" src="<?php the_post_thumbnail_url(); ?>">
-                                        <?php 
-                                            $categories = get_the_category(get_the_ID());
-                                            if(count($categories)) {
-                                        ?>
-                                                <ul class="categories">
-                                        <?php 
-                                                    foreach($categories as $category) {
-                                        ?>
-                                                        <li>
-                                                            <span>
-                                                                <?=$category->name?>
-                                                            </span>
-                                                        </li>
-                                        <?php 
-                                                    }
-                                        ?>
-                                                </ul>
-                                        <?php 
-                                            }
-                                        ?>
-                                    </div>
-                                    <div class="article__content">
-                                        <h4 class="article__title">
-                                            <?php the_title(); ?>
-                                        </h4>
-                                    </div>
-                                </a>
-                            </article>
-                        </div>
-            <?php 
-                    }
-                }
-            ?>
-        </div>
-        <a class="btn-custom" href="<?php bloginfo('url'); ?>/blog">Ver todos os artigos</a>
-    </div>
-</section>
+    if($query->have_posts()) {
+?>
+        <section class="more-articles">
+            <div class="container">
+                <h1 class="section-title">Outros artigos</h1>
+                <div class="row">
+                    <?php 
+                        while($query->have_posts()) {
+                            $query->the_post();
+                    ?>
+                            <div class="col-sm-4 col-xs-12">
+                                <article class="article">
+                                    <a href="<?php the_permalink(); ?>">
+                                        <div class="article__thumb">
+                                            <img alt="<?php the_title(); ?>" src="<?php the_post_thumbnail_url(); ?>">
+                                            <?php 
+                                                $categories = get_the_category(get_the_ID());
+                                                if(count($categories)) {
+                                            ?>
+                                                    <ul class="categories">
+                                            <?php 
+                                                        foreach($categories as $category) {
+                                            ?>
+                                                            <li>
+                                                                <span>
+                                                                    <?=$category->name?>
+                                                                </span>
+                                                            </li>
+                                            <?php 
+                                                        }
+                                            ?>
+                                                    </ul>
+                                            <?php 
+                                                }
+                                            ?>
+                                        </div>
+                                        <div class="article__content">
+                                            <h4 class="article__title">
+                                                <?php the_title(); ?>
+                                            </h4>
+                                        </div>
+                                    </a>
+                                </article>
+                            </div>
+                    <?php 
+                        }
+                    ?>
+                </div>
+                <a class="btn-custom" href="<?php bloginfo('url'); ?>/blog">Ver todos os artigos</a>
+            </div>
+        </section>
+<?php 
+    }
+?>
 <?php get_footer(); ?>

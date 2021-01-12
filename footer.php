@@ -12,21 +12,27 @@
                 <div class="row">
                     <div class="footer-left col-sm-4 col-xs-12">
                         <a class="footer-brand" href="<?php bloginfo('url'); ?>">
-                            <img alt="Logo" src="<?php bloginfo('template_url'); ?>/assets/images/logo.png">
+                            <img alt="Logo" class="img-responsive" src="<?php bloginfo('template_url'); ?>/assets/images/logo.png">
                         </a>
                         <p>
                             <?=$description?>
                         </p>
                     </div>
                     <div class="footer-middle col-sm-4 col-xs-12">
-                        <b>Endereço</b>
-                        <p><?=$address?></p>
-                        <br>
-                        <b>Telefone</b>
-                        <p><?=$phone?></p>
-                        <br>
-                        <b>E-mail</b>
-                        <p><?=$email?></p>
+                        <ul>
+                            <li>
+                                <b>Endereço</b>
+                                <?=$address?>
+                            </li>
+                            <li>
+                                <b>Telefone</b>
+                                <?=$phone?>
+                            </li>
+                            <li>
+                                <b>E-mail</b>
+                                <?=$email?>
+                            </li>
+                        </ul>
                     </div>
                     <div class="footer-right col-sm-4 col-xs-12">
                         <b>Fique por dentro das novidades</b>

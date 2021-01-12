@@ -97,10 +97,17 @@
         loop: true,
         margin: 15,
         stagePadding: 0,
-        dots: false,
-        nav: true,
+        dots: true,
         navText: ['<i class="fa fa-caret-left"></i>', '<i class="fa fa-caret-right"></i>'],
-        items: 1
+        items: 1,
+        responsive: {
+            0: {
+                nav: false,
+            },
+            768: {
+                nav: true
+            }
+        }
     });
     
     $('.owl-cases').owlCarousel({
