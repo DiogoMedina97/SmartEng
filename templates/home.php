@@ -23,18 +23,20 @@
     </section>
 <?php } ?>
 <?php 
-    $about = get_field('about');
-    if($about) {
+    if(have_rows('about')) {
+        the_row();
+        $description = get_sub_field('description');
+        $image = get_sub_field('image');
 ?>
         <section id="about" class="about">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-xs-12">
                         <h1 class="section-title section-title--left">A SmartEng</h1>
-                        <p><?=$about?></p>
+                        <p><?=$description?></p>
                     </div>
                     <div class="col-sm-6 col-xs-12">
-
+                        <img alt="Sobre" class="img-responsive" src="<?=$image?>">
                     </div>
                 </div>
             </div>

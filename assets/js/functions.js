@@ -53,10 +53,27 @@
         nav: false,
         responsive: {
             0: {
-                items: 1
+                dots: true,
+                items: 1,
             },
             768: {
                 items: 3
+            }
+        }
+    });
+
+    $('.owl-cases').owlCarousel({
+        loop: true,
+        margin: 15,
+        stagePadding: 0,
+        nav: false,
+        items: 1,
+        responsive: {
+            0: {
+                dots: true
+            },
+            768: {
+                dots: false
             }
         }
     });
@@ -65,13 +82,14 @@
         loop: true,
         margin: 15,
         stagePadding: 0,
-        dots: false,
         nav: false,
         responsive: {
             0: {
+                dots: true,
                 items: 1
             },
             768: {
+                dots: false,
                 items: 3
             }
         }
@@ -81,13 +99,18 @@
         loop: true,
         margin: 15,
         stagePadding: 0,
-        dots: false,
         nav: false,
         responsive: {
             0: {
+                dots: true,
                 items: 1
             },
             768: {
+                dots: false,
+                items: 3
+            },
+            992: {
+                dots: false,
                 items: 4
             }
         }
@@ -108,14 +131,5 @@
                 nav: true
             }
         }
-    });
-    
-    $('.owl-cases').owlCarousel({
-        loop: true,
-        margin: 15,
-        stagePadding: 0,
-        dots: false,
-        nav: false,
-        items: 1
     });
 })(jQuery);

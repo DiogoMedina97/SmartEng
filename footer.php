@@ -55,7 +55,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <p>© 2020 SmartEng.</p>
+                        <p>© <?=date('Y')?> SmartEng.</p>
                     </div>
                 </div>
             </div>

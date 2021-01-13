@@ -25,9 +25,12 @@
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                             <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
+                            <div class="navbar-toggle__bars navbar-toggle__bars--open">
+                                Menu <i class="fa fa-bars"></i>
+                            </div>
+                            <div class="navbar-toggle__bars navbar-toggle__bars--close">
+                                Fechar <i class="fa fa-times"></i>
+                            </div>
                         </button>
                         <a class="navbar-brand" href="<?php bloginfo('url'); ?>">
                             <img alt="Logo" class="img-responsive" src="<?php bloginfo('template_url'); ?>/assets/images/logo.png">
