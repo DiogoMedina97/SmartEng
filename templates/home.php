@@ -274,6 +274,7 @@
     }
 ?>
 <section id="contact" class="contact">
+    <img class="img-responsive contact-bg-mobile" src="<?php bloginfo('template_url'); ?>/assets/images/contact_bg-mobile.png">
     <div class="container">
         <div class="row">
             <div class="col-sm-6">

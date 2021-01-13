@@ -114,7 +114,7 @@
             } else {
         ?>
                 <p>Nenhum resultado encontrado. ):</p><br>
-                <a class="btn-custom" href="<?php bloginfo('url'); ?>/blog" style="margin: 0 0 50px 0;">Ver todos os artigos</a>
+                <a class="btn-custom" href="<?php bloginfo('url'); ?>/blog" style="margin-bottom: 50px !important;">Ver todos os artigos</a>
         <?php 
             }
         ?>

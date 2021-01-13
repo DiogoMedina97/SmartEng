@@ -181,6 +181,7 @@ hr.divider--secondary {
 	background-color: #0F70B7 !important;
 	display: block !important;
 	position: relative !important;
+	clip-path: polygon(0 0, 95% 0, 100% 20%, 100% 100%, 100% 100%, 5% 100%, 0 80%);
 }
 
 .btn-custom:hover {
@@ -563,7 +564,8 @@ hr.divider--secondary {
 }
 
 .testimonial__description {
-	text-align: justify;
+	line-height: 1.5;
+	font-size: 32px;
 }
 
 .testimonial-author {
@@ -693,6 +695,10 @@ hr.divider--secondary {
 .contact-form .btn-custom {
 	margin: 0 0 0 auto !important;
 }
+
+.contact-bg-mobile {
+	display: none;
+}
 /* /HOME */
 
 /* SINGLE POST */
@@ -702,7 +708,7 @@ hr.divider--secondary {
 }
 
 .single-article-container {
-	width: 750px;
+	width: 760px !important;
 	max-width: 100%;
 }
 
@@ -728,6 +734,7 @@ hr.divider--secondary {
 	top: 50px;
 	z-index: 1;
 	position: relative;
+	clip-path: polygon(0 0, 95% 0, 100% 10%, 100% 100%, 0 100%);
 }
 
 .single-article__title {
@@ -809,11 +816,35 @@ hr.divider--secondary {
 
 .article-author {
 	margin: 50px -10px;
+	padding: 70px 0;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
 	flex-flow: row;
 	display: flex;
+	position: relative;
+}
+
+.article-author:before,
+.article-author:after {
+	height: 20px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	content: '';
+	left: 10px;
+	right: 10px;
+	position: absolute;
+}
+
+.article-author:before {
+	background-image: url('./assets/images/divider-author-up.png');
+    top: 0;
+}
+
+.article-author:after {
+	background-image: url('./assets/images/divider-author-down.png');
+	bottom: 0;
 }
 
 .article-author__thumb {
@@ -1024,6 +1055,10 @@ footer {
     	font-size: 25px;
     }
 
+    h3 {
+    	font-size: 20px;
+    }
+
     .navbar-default .navbar-toggle {
     	min-width: 100px;
     	margin: 15px 15px 0 0;
@@ -1130,6 +1165,10 @@ footer {
 		padding: 30px 0;
 	}
 
+	.testimonial__description {
+        font-size: 22px;
+	}
+
 	.partners {
 		padding: 30px 0;
 	}
@@ -1139,12 +1178,18 @@ footer {
 	}
 
 	.contact {
-		padding: 30px 0;
+		padding: 0 0 30px 0;
 		background: #fff;
 	}
 
 	.contact-form .btn-custom {
 		width: 100% !important;
+	}
+
+	.contact-bg-mobile {
+		width: 100%;
+		margin-bottom: 30px;
+		display: block;
 	}
 	/* /HOME */
 
@@ -1180,6 +1225,7 @@ footer {
     	font-size: 15px;
     }
 	/* /SINGLE POST */
+
     footer {
     	padding: 30px 0;
     }
@@ -1196,4 +1242,10 @@ footer {
 	.footer-social-networks > ul {
 		float: left;
 	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+	    width: 1120px;
+    }
 }

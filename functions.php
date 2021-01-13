@@ -5,4 +5,12 @@
     if( function_exists('acf_add_options_page') ) {
         acf_add_options_page();
     }
+
+    add_filter( 'comment_form_fields', 'move_comment_field' );
+    function move_comment_field( $fields ) {
+        $comment_field = $fields['comment'];
+        unset( $fields['comment'] );
+        $fields['comment'] = $comment_field;
+        return $fields;
+    }
 ?>
