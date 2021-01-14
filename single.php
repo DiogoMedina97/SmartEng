@@ -15,58 +15,56 @@
                 <article class="single-article">
                     <div class="single-article__thumb">
                         <div class="single-article__thumb-background" style="background-image: url('<?php the_post_thumbnail_url(); ?>');"></div>
-                        <div class="container">
+                        <div class="container single-article-container">
                             <img class="img-responsive" alt="<?php the_title(); ?>" src="<?php the_post_thumbnail_url(); ?>">
                         </div>
                     </div>
                     <div class="container single-article-container">
-                        <h1 class="single-article__title">
-                            <?php the_title(); ?>
-                        </h1>
-                    </div>
-                    <div class="container">
-                        <div class="article-infos">
-                            <div class="article-infos__content container single-article-container">
-                                <div class="row">
-                                    <div class="col-sm-2 col-xs-12">
-                                        <div class="article-infos__date">
-                                            <?php the_date('d/m/Y'); ?>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-xs-12">
-                                        <?php 
-                                            $categories = get_the_category(get_the_ID());
-                                            if(count($categories)) {
-                                        ?>
-                                                <ul class="categories">
-                                        <?php 
-                                                foreach($categories as $category) {
-                                        ?>
-                                                    <li>
-                                                        <a href="<?=get_term_link($category->term_id)?>">
-                                                            <?=$category->name?>
-                                                        </a>
-                                                    </li>
-                                        <?php 
-                                                }
-                                        ?>
-                                                </ul>
-                                        <?php 
-                                            }
-                                        ?>
-                                    </div>
-                                    <?php if($article_author) { ?>
-                                        <div class="col-sm-4 col-xs-12">
-                                            <div class="article-infos__author">
-                                                <b>Autor:</b> <?=$article_author?>
+                        <div class="single-article__header">
+                            <h1 class="single-article__title">
+                                <?php the_title(); ?>
+                            </h1>
+                            <div class="single-article-infos">
+                                <div class="single-article-infos__content">
+                                    <div class="row">
+                                        <div class="col-sm-2 col-xs-12">
+                                            <div class="single-article-infos__date">
+                                                <?php the_date('d/m/Y'); ?>
                                             </div>
                                         </div>
-                                    <?php } ?>
+                                        <div class="col-sm-6 col-xs-12">
+                                            <?php 
+                                                $categories = get_the_category(get_the_ID());
+                                                if(count($categories)) {
+                                            ?>
+                                                    <ul class="categories">
+                                            <?php 
+                                                    foreach($categories as $category) {
+                                            ?>
+                                                        <li>
+                                                            <a href="<?=get_term_link($category->term_id)?>">
+                                                                <?=$category->name?>
+                                                            </a>
+                                                        </li>
+                                            <?php 
+                                                    }
+                                            ?>
+                                                    </ul>
+                                            <?php 
+                                                }
+                                            ?>
+                                        </div>
+                                        <?php if($article_author) { ?>
+                                            <div class="col-sm-4 col-xs-12">
+                                                <div class="single-article-infos__author">
+                                                    <b>Autor:</b> <?=$article_author?>
+                                                </div>
+                                            </div>
+                                        <?php } ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="container single-article-container">
                         <?php the_content(); ?>
                     </div>
                 </article>
@@ -75,22 +73,22 @@
                         <span>Compartilhe este artigo</span>
                         <ul>
                             <li>
-                                <a href="#">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=<?=rawurlencode(get_the_permalink())?>">
                                     <i class="fa fa-facebook"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="http://www.twitter.com/share?url=<?=rawurlencode(get_the_permalink())?>">
                                     <i class="fa fa-twitter"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="mailto:?body=<?=rawurlencode(get_the_permalink())?>">
                                     <i class="fa fa-envelope"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="https://api.whatsapp.com/send?text=<?=rawurlencode(get_the_permalink())?>">
                                     <i class="fa fa-whatsapp"></i>
                                 </a>
                             </li>

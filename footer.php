@@ -14,45 +14,57 @@
                         <a class="footer-brand" href="<?php bloginfo('url'); ?>">
                             <img alt="Logo" class="img-responsive" src="<?php bloginfo('template_url'); ?>/assets/images/logo.png">
                         </a>
-                        <p>
-                            <?=$description?>
-                        </p>
+                        <?php if($description) { ?>
+                                <p><?=$description?></p>
+                        <?php } ?>
                     </div>
                     <div class="footer-middle col-sm-4 col-xs-12">
                         <ul>
-                            <li>
-                                <b>Endereço</b>
-                                <?=$address?>
-                            </li>
-                            <li>
-                                <b>Telefone</b>
-                                <?=$phone?>
-                            </li>
-                            <li>
-                                <b>E-mail</b>
-                                <?=$email?>
-                            </li>
+                            <?php if($address) { ?>
+                                    <li>
+                                        <b>Endereço</b>
+                                        <?=$address?>
+                                    </li>
+                            <?php } ?>
+                            <?php if($phone) { ?>
+                                    <li>
+                                        <b>Telefone</b>
+                                        <?=$phone?>
+                                    </li>
+                            <?php } ?>
+                            <?php if($email) { ?>
+                                    <li>
+                                        <b>E-mail</b>
+                                        <?=$email?>
+                                    </li>
+                            <?php } ?>
                         </ul>
                     </div>
                     <div class="footer-right col-sm-4 col-xs-12">
                         <b>Fique por dentro das novidades</b>
                         <div class="footer-social-networks">
                             <ul>
-                                <li>
-                                    <a href="https://instagram.com/<?=$instagram?>">
-                                        <i class="fa fa-instagram"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://youtube.com/channel/<?=$youtube?>">
-                                        <i class="fa fa-youtube-play"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://facebook.com/<?=$facebook?>">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
+                                <?php if($instagram) { ?>
+                                        <li>
+                                            <a href="https://instagram.com/<?=$instagram?>">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                <?php } ?>
+                                <?php if($youtube) { ?>
+                                        <li>
+                                            <a href="https://youtube.com/channel/<?=$youtube?>">
+                                                <i class="fa fa-youtube-play"></i>
+                                            </a>
+                                        </li>
+                                <?php } ?>
+                                <?php if($facebook) { ?>
+                                        <li>
+                                            <a href="https://facebook.com/<?=$facebook?>">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                <?php } ?>
                             </ul>
                         </div>
                         <p>© <?=date('Y')?> SmartEng.</p>

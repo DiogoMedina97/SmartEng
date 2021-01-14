@@ -426,6 +426,8 @@ hr.divider--secondary {
 
 .about {
 	padding: 100px 0;
+	background: url('./assets/images/about_bg.png') center right no-repeat #efefef;
+	background-size: contain;
 }
 
 .about img {
@@ -436,6 +438,16 @@ hr.divider--secondary {
 	padding: 100px 0;
 	background: url('./assets/images/services_bg.png') center no-repeat #23305D;
 	background-size: cover;
+}
+
+.services .owl-stage {
+	flex-wrap: wrap;
+	display: flex;
+}
+
+.services .item,
+.services .service {
+	height: 100%;
 }
 
 .services .section-title {
@@ -495,7 +507,7 @@ hr.divider--secondary {
 
 .case__content {
 	width: 60%;
-	padding: 20px;
+	padding: 20px 100px;
 	float: left;
 }
 
@@ -513,6 +525,16 @@ hr.divider--secondary {
 	background-color: #23305D;
 	position: relative;
 	clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+}
+
+.courses .owl-stage {
+	flex-wrap: wrap;
+	display: flex;
+}
+
+.courses .item,
+.courses .course {
+    height: 100%;
 }
 
 .courses .section-title {
@@ -630,6 +652,16 @@ hr.divider--secondary {
 	padding: 100px 0;
 }
 
+.partners .owl-stage {
+    flex-wrap: wrap;
+	display: flex;
+}
+
+.partners .item,
+.partners .partner {
+	height: 100%;
+}
+
 .partner .box__icon {
 	min-height: 100px;
 	justify-content: center;
@@ -713,7 +745,7 @@ hr.divider--secondary {
 }
 
 .single-article__thumb {
-	margin-bottom: 80px;
+	margin-bottom: 50px;
 	position: relative;
 }
 
@@ -730,6 +762,7 @@ hr.divider--secondary {
 }
 
 .single-article__thumb img {
+	width: 100%;
 	margin: 0 auto;
 	top: 50px;
 	z-index: 1;
@@ -737,7 +770,14 @@ hr.divider--secondary {
 	clip-path: polygon(0 0, 95% 0, 100% 10%, 100% 100%, 0 100%);
 }
 
+.single-article__header {
+	margin-bottom: 50px;
+	border: 1px solid #D5D5D5;
+	border-top: 0;
+}
+
 .single-article__title {
+	padding: 15px;
 	font-family: forced_square;
 	font-size: 50px;
 	color: #23305D;
@@ -791,26 +831,24 @@ hr.divider--secondary {
 	box-shadow: 0 0;
 }
 
-.article-infos {
-	margin: 30px 0;
-	padding: 5px 0;
+.single-article-infos {
+	padding: 5px 15px;
 	border-top: 1px solid #D5D5D5;
-	border-bottom: 1px solid #D5D5D5;
 }
 
-.article-infos__content > .row {
+.single-article-infos__content > .row {
     align-items: center;
     flex-flow: row;
     flex-wrap: wrap;
     display: flex;
 }
 
-.article-infos .categories > li > a {
+.single-article-infos .categories > li > a {
 	padding-top: 0;
 	padding-bottom: 0;
 }
 
-.article-infos__author {
+.single-article-infos__author {
 	text-align: right;
 }
 
@@ -971,7 +1009,7 @@ footer {
 
 .footer-brand {
 	margin-bottom: 15px;
-	display: block;
+	display: inline-block;
 }
 
 .footer-middle ul {
@@ -1155,6 +1193,7 @@ footer {
 
 	.case__content {
 		width: 100%;
+		padding: 20px;
 	}
 
 	.courses {
@@ -1206,12 +1245,12 @@ footer {
     	text-align: center;
     }
 
-    .article-infos,
-    .article-infos__author {
+    .single-article-infos,
+    .single-article-infos__author {
     	text-align: center;
     }
 
-    .article-infos .categories {
+    .single-article-infos .categories {
         justify-content: center;
         flex-flow: row;
     	display: flex;
