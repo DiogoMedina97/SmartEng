@@ -7,7 +7,7 @@
     $youtube = get_field('footer_youtube', 'option');
     $facebook = get_field('footer_facebook', 'option');
 ?>
-        <footer>
+        <footer class="footer">
             <div class="container">
                 <div class="row">
                     <div class="footer-left col-sm-4 col-xs-12">
