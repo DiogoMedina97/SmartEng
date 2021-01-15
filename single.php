@@ -75,22 +75,22 @@
                         <span>Compartilhe este artigo</span>
                         <ul>
                             <li>
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=<?=rawurlencode(get_the_permalink())?>">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=<?=rawurlencode(get_the_permalink())?>" target="_blank">
                                     <i class="fa fa-facebook"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="http://www.twitter.com/share?url=<?=rawurlencode(get_the_permalink())?>">
+                                <a href="http://www.twitter.com/share?url=<?=rawurlencode(get_the_permalink())?>" target="_blank">
                                     <i class="fa fa-twitter"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="mailto:?body=<?=rawurlencode(get_the_permalink())?>">
+                                <a href="mailto:?body=<?=rawurlencode(get_the_permalink())?>" target="_blank">
                                     <i class="fa fa-envelope"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://api.whatsapp.com/send?text=<?=rawurlencode(get_the_permalink())?>">
+                                <a href="https://api.whatsapp.com/send?text=<?=rawurlencode(get_the_permalink())?>" target="_blank">
                                     <i class="fa fa-whatsapp"></i>
                                 </a>
                             </li>

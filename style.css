@@ -462,6 +462,17 @@ hr.divider--secondary {
 	color: #23305D;
 }
 
+.service .box__icon {
+	min-height: 100px;
+	align-items: center;
+	flex-flow: row;
+	display: flex;
+}
+
+.service .box__icon > img {
+	max-height: 100px;
+}
+
 .services .owl-carousel .owl-dot span {
 	background-color: #9198ae !important;
 }
@@ -671,7 +682,6 @@ hr.divider--secondary {
 
 .partner .box__icon {
 	min-height: 100px;
-	justify-content: center;
 	align-items: center;
 	flex-flow: row;
 	display: flex;

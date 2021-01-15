@@ -46,21 +46,21 @@
                             <ul>
                                 <?php if($instagram) { ?>
                                         <li>
-                                            <a href="https://instagram.com/<?=$instagram?>">
+                                            <a href="https://instagram.com/<?=$instagram?>" target="_blank">
                                                 <i class="fa fa-instagram"></i>
                                             </a>
                                         </li>
                                 <?php } ?>
                                 <?php if($youtube) { ?>
                                         <li>
-                                            <a href="https://youtube.com/channel/<?=$youtube?>">
+                                            <a href="https://youtube.com/channel/<?=$youtube?>" target="_blank">
                                                 <i class="fa fa-youtube-play"></i>
                                             </a>
                                         </li>
                                 <?php } ?>
                                 <?php if($facebook) { ?>
                                         <li>
-                                            <a href="https://facebook.com/<?=$facebook?>">
+                                            <a href="https://facebook.com/<?=$facebook?>" target="_blank">
                                                 <i class="fa fa-facebook"></i>
                                             </a>
                                         </li>
