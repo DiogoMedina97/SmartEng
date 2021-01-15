@@ -171,6 +171,7 @@ hr.divider--secondary {
 	margin: 0 auto !important;
 	padding: 20px !important;
 	border: 0 !important;
+	outline: none !important;
 	text-decoration: none !important;
 	text-align: center !important;
 	color: #fff !important;
@@ -279,7 +280,9 @@ hr.divider--secondary {
 }
 
 .article__title {
+	line-height: 1.3em;
 	margin-bottom: 5px;
+	font-weight: bold;
 	color: #0F70B7;
 }
 
@@ -554,6 +557,7 @@ hr.divider--secondary {
 
 .course .box__description {
 	margin-bottom: 15px;
+	text-align: left;
 }
 
 .courses .owl-carousel .owl-dot span {
@@ -589,6 +593,7 @@ hr.divider--secondary {
 .testimonial__description {
 	line-height: 1.5;
 	font-size: 32px;
+	text-align: center;
 }
 
 .testimonial-author {
@@ -605,6 +610,7 @@ hr.divider--secondary {
 
 .testimonial-author__thumb > img {
 	max-width: 80px;
+	clip-path: polygon(0 0, 90% 0, 100% 10%, 100% 100%, 0 100%);
 }
 
 .testimonial-author__content {
@@ -722,7 +728,17 @@ hr.divider--secondary {
 .contact-form input,
 .contact-form select,
 .contact-form textarea {
-    border: 1px solid #000 !important;
+	height: 54px !important;
+	line-height: 1em !important;
+	padding: 15px 20px !important;
+	font-size: 18px !important;
+    border: 1px solid #23305D !important;
+}
+
+.contact-form textarea {
+    height: 200px !important;
+    padding: 20px !important;
+    resize: none !important;
 }
 
 .contact-form .btn-custom {
@@ -778,10 +794,24 @@ hr.divider--secondary {
 }
 
 .single-article__title {
-	padding: 15px;
+	padding: 15px 30px;
 	font-family: forced_square;
 	font-size: 50px;
 	color: #23305D;
+}
+
+.single-article__content {
+	padding: 0 30px;
+}
+
+.single-article__content h1,
+.single-article__content h2,
+.single-article__content h3,
+.single-article__content h4,
+.single-article__content h5,
+.single-article__content h6 {
+	font-family: forced_square;
+	color: #0F70B7;
 }
 
 .share-article {
@@ -833,7 +863,7 @@ hr.divider--secondary {
 }
 
 .single-article-infos {
-	padding: 5px 15px;
+	padding: 5px 30px;
 	border-top: 1px solid #D5D5D5;
 }
 
@@ -919,10 +949,17 @@ hr.divider--secondary {
 #commentform input,
 #commentform textarea {
 	width: 100%;
+	line-height: 18px;
 	margin-bottom: 15px;
-	padding: 15px;
+	padding: 15px 20px;
 	border: 1px solid #C4C4C4;
+	font-size: 18px;
     display: block;
+}
+
+#commentform textarea {
+    padding: 20px;
+    resize: none;
 }
 
 #commentform .btn-custom {
@@ -1240,7 +1277,8 @@ footer {
 
 	/* SINGLE POST */
     .single-article__title {
-    	font-size: 35px;
+    	padding: 15px;
+    	font-size: 25px;
     }
 
     .article-author {
@@ -1256,10 +1294,18 @@ footer {
     	text-align: center;
     }
 
+    .single-article-infos {
+    	padding: 5px 15px;
+    }
+
     .single-article-infos .categories {
         justify-content: center;
         flex-flow: row;
     	display: flex;
+    }
+
+    .single-article__content {
+        padding: 0 15px;
     }
 
     #comments .comment-meta {

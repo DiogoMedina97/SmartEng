@@ -65,7 +65,9 @@
                                 </div>
                             </div>
                         </div>
-                        <?php the_content(); ?>
+                        <div class="single-article__content">
+                            <?php the_content(); ?>
+                        </div>
                     </div>
                 </article>
                 <div class="container single-article-container">
