@@ -37,6 +37,8 @@
 	});
 
     $('.owl-banner').owlCarousel({
+		autoplay: true,
+		autoplayTimeout: 6000,
         loop: true,
         margin: 0,
         stagePadding: 0,

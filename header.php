@@ -12,6 +12,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+        <link rel="icon" href="<?php bloginfo('template_url'); ?>/assets/images/icons/favicon.ico">
         <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/font-awesome.min.css">
         <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/owlcarousel/css/owl.carousel.min.css">
